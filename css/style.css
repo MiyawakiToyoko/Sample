@@ -1,0 +1,1050 @@
+@charset "UTF-8";
+
+body{
+    background-color:#f2f0e4;
+    color: #223c62;
+    font-size: 0.8rem;
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+img{
+    width: 100%;
+    vertical-align: bottom;
+    /* 追加 */
+    object-fit: cover;
+}
+
+svg{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+a{
+    text-decoration: none;
+    color:#223c62;
+    display:inline-block;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2%;
+
+    /* border:3px solid yellow; */
+}
+
+ul{
+    list-style: none;
+}
+
+/* タイトル見出し */
+.sec-title{
+    border-bottom: 2px solid #223c62;
+    border-top: 2px solid #223c62;
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+.sec-title:first-letter {
+    font-size: 150%;
+    color: #4794c1;
+}
+
+.sec-title:first-child{
+    border-top: none;
+}
+
+/*********************************
+	ローディング画面
+*********************************/
+        .loading {
+            width: 100vw;
+            height: 100vh;
+            transition: all 1s;
+            /* background-color: #FFF; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+          }
+          
+          .loading.is-active {
+            opacity: 0;
+            visibility: hidden;
+          }
+          
+          .loading-animation {
+            width: 100vw;
+            height: 100vh;
+            transition: all 1s;
+            background-color: #FFF;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          .loading-animation img{
+            width: 200px;
+          }
+          
+          .loading-animation.is-active {
+            opacity: 1;
+            visibility: visible;
+          }
+
+/*********************************
+	ヘッダー
+*********************************/
+#navi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #223c62;
+}
+
+.logo img{
+    height: 40px;
+}
+
+.logo{
+    padding: 20px;
+    background: #223c62;
+}
+
+
+
+#navi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #223c62;
+    height: 80px;
+    width: 100%;
+}
+
+.logo img{
+    /* height: 40px; */
+    width: 180px;
+    line-height: 80px;
+    
+}
+
+
+.logo{
+    padding: 19px;
+    /* height: 80px; */
+    background: #223c62;
+}
+
+
+
+
+
+#navi ul{
+    /* border: solid red; */
+    display: flex;
+    align-items: center;
+}
+
+#navi ul a{
+margin-left: 30px;
+}
+
+
+.contact{
+    width: 120px;
+    height: 80px;
+    background-color: #223c62;
+    color:white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact img{
+    width: 30px;
+}
+
+.contact p{
+    color:#f2f0e4;
+    padding: 0;
+}
+
+.nav-menu2{
+    display: none;
+}
+
+
+.nav-menu a, .nav-menu2 a{
+    padding-bottom: 3px;
+    position: relative;
+}
+.nav-menu a:nth-child(-n+3)::before, .nav-menu2 a::before{
+    background: #4794c1;
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: center top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+}
+.nav-menu a:nth-child(-n+3):hover::before,.nav-menu2 a:hover::before{
+    transform-origin: center top;
+    transform: scale(1, 1);
+}
+
+
+
+
+
+/*********************************
+	SNS
+*********************************/
+
+.sns{
+    display: flex;
+    /* height: 50vh; */
+    /* border: 2px solid red; */
+}
+
+.sns-link{
+    width:40%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    border-right: solid 2px #223c62;
+}
+.sns-link a{
+    /* border: solid; */
+    margin-top: 10px;
+}
+
+.sns-link ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+
+/* 動画 */
+.video-box{
+    position: relative;
+    width: 60%;
+    height: 50vh;
+    overflow: hidden;
+    /* border: solid pink; */
+}
+
+#video{
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+/* 動画にかぶせる文字のアニメーション */
+.fade-in-text {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'train-one';
+
+    /*文字のふちどり */
+    /* 参考　https://webparts.cman.jp/string/outline/ */
+        color          : #f2f0e4;        
+        letter-spacing : 4px;           /* 文字間 */   
+        text-shadow    : 
+            2px  2px 1px #223c62,
+            -2px  2px 1px #223c62,
+            2px -2px 1px #223c62,
+            -2px -2px 1px #223c62,
+            2px  0px 1px #223c62,
+            0px  2px 1px #223c62,
+            -2px  0px 1px #223c62,
+            0px -2px 1px #223c62;  /* 文字の影 */
+
+    /* アニメーション設定 */
+    /* 参考「下からフェードイン」　https://ui-hack.com/programming/html_css/css_textanimation/ */
+    opacity: 0; /* 初めは透明に設定 */
+    transform: translateY(-100%); /* 上からスライドするために位置を上に設定 */
+    animation: fadeInFromBottom 10s forwards; /* フェードインアニメーションの設定 */
+    animation-iteration-count: infinite;  /* 繰り返し */
+    /* animation-direction: alternate; */ /*逆転の繰り返し */
+}
+
+@keyframes fadeInFromBottom {
+    to {
+    opacity: 1; /* アニメーション終了時に完全に表示 */
+    transform: translateY(0); /* アニメーション終了時の位置 */
+    }
+}
+
+.video-text{
+    /* 文字を動画（video-box）の上に重ねる */
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+
+
+/*********************************
+	メディア化
+*********************************/
+
+/* -------------スライダー --------------- */
+/* 参考 https://coco-factory.jp/ugokuweb/move01/6-1-7/ */
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 94%;
+    margin:50px auto 30px auto;
+}
+
+.slider img {
+    max-width: 450px;
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+    transform: scale(0.8);/*左右の画像のサイズを80%に*/
+    transition: all 1s;/*拡大や透過のアニメーションを1秒で行う*/
+    opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+    transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+    opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #223c62;/*矢印の色*/
+    border-right: 2px solid #223c62;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots {
+    text-align: center;
+    margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+    margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:10px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#CCC;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#223c62;/*ドットボタンの現在地表示の色*/
+}
+
+.slick-slide {
+    margin: 0 15px;
+}
+/* -------------スライダー ここまで--------------- */
+
+
+
+/*********************************
+	トピックス
+*********************************/
+.topics-wrapper{
+    display: flex;
+}
+
+.ranking{
+    width: 50%;
+    padding-left:30px;
+    margin-bottom: 1rem;
+}
+
+.news{
+    width: 50%;
+}
+
+/* ランキング */
+/* 参考 https://migi.me/css/heading-crown-mark/ */
+.list_crown {
+    list-style: none;
+}
+
+.list_crown li {
+    position: relative;
+    padding: 1rem 0px 0px 1rem;
+    font-size: 1.2rem;
+    
+}
+.list_crown li::before,
+.list_crown li::after {
+    position: absolute;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    content: "";
+}
+.list_crown li::before {
+    top: -0.25em;
+    border: 1em solid transparent;
+    border-bottom: 1.5em solid currentColor;
+    z-index: -1;
+}
+.list_crown li::after {
+    top: 1.25em;
+    border: 0.5em solid transparent;
+    border-left: 1em solid currentColor;
+    border-right: 1em solid currentColor;
+    z-index: -1;
+}
+.list_crown li:nth-of-type(1) {
+    color: #dbb400;
+}
+.list_crown li:nth-of-type(2) {
+    color: #9fa0a0;
+}
+.list_crown li:nth-of-type(3) {
+    color: #c47022;
+}
+
+.list_crown span{
+    font-size: 1rem;
+    color:#223c62;
+    font-weight: bold;
+    color:#f2f0e4;
+}
+
+.list_crown a{
+    margin-left: 30px;
+    text-decoration: underline;
+}
+
+
+
+/* お知らせ */
+.news dl {
+    padding: 0px 0px 1rem 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid #223c62;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.news dt {
+    width: 25%;
+    /* border-top: 1px solid #ccc; */
+    padding-top: 1rem;
+}
+
+.news dd {
+    width: 75%;
+    /* border-top: 1px solid #ccc; */
+    padding-left: 10px;
+    padding-top: 1rem;
+}
+
+
+
+
+/*********************************
+	本を探す
+*********************************/
+
+.search{
+    padding: 30px 3%;
+}
+
+/* タブメニュー */
+/*tabの形状*/
+.tab{
+    display: flex;
+    flex-wrap: wrap;
+
+    border-bottom: 2px solid #223c62;
+    background:#f2f0e4;
+}
+
+
+
+.tab li a{
+    display: block;
+    background:#223c62;
+    color:#f2f0e4;
+    margin:0 2px;
+    padding:10px 20px;
+
+    /* 要調整 */
+    /*###### タブメニューの幅を揃えて4等分にしたい ######*/
+    /* width: calc(100% / 4);*/
+    
+    /* border:solid red; */
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+    background: #4794c1;
+    color:#223c62;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+    display: none;/*はじめは非表示*/
+    opacity: 0;/*透過0*/
+    background: #fff;
+    padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+/* タブメニュ-ここまで */
+
+
+/* 書影 */
+.items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+/*========= 検索窓のためのCSS ===============*/
+
+/*検索窓のエリア*/
+#search-wrap {
+    /* position: absolute;絶対配置にして */
+    z-index: 2;
+    /*最前面に設定。数字は変更可*/
+    /* top:10px; */
+    right: 10px;
+}
+
+/*テキスト入力input設定*/
+#search-text {
+    -webkit-appearancee: none;
+    /*SafariやChromeのデフォルトの設定を無効*/
+    width: 60px;
+    /*テキスト入力エリアが伸びる前の横幅*/
+    height: 60px;
+    padding: 20px;
+    border: none;
+    background: #fff url("../img/search.png") no-repeat 17px center;
+    /*虫眼鏡アイコンを背景に表示*/
+    background-size: 25px 25px;
+    transition: all 0.5s;
+    /*transitionを使ってスムースに伸ばす*/
+    outline: none;
+    cursor: pointer;
+    /*カーソルを指マークに*/
+}
+
+/*テキスト入力inputにフォーカスした時の形状*/
+#search-text:focus {
+    width: 250px;
+    /*テキスト入力エリアが伸びる後の横幅*/
+    padding: 20px 0 20px 60px;
+    box-shadow: 0 2px rgba(6, 0, 1, .26);
+}
+
+/*********************************
+	フッター
+*********************************/
+
+footer{
+    background: #223c62;
+    height: 200px;
+    padding-top:30px;
+    color:#f2f0e4;
+}
+
+footer a{
+    color:#f2f0e4;
+    margin-bottom: 15px;  
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 0 50px;
+}
+
+.footer-menu{
+    display: flex;
+}
+
+.copyright{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/*-------------------------------------------
+トップへ戻るボタン
+-------------------------------------------*/
+/*
+右下に固定で配置
+表示・非表示の切り替えはjQueryで行うため、詳細は「main.js」のコメントを参照
+*/
+.to-top {
+    width: 60px;
+    height: 60px;
+    background-color: #223c62;
+    border: solid 2px #f2f0e4;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+/*
+中の三角は疑似要素で作成
+  */
+.to-top::after {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f2f0e4;
+    position: relative;
+    left: 19px;
+    bottom: -3px;
+}
+
+
+
+
+/*********************************
+	レスポンシブ
+*********************************/
+
+@media(max-width: 900px){
+
+/*********************************
+	ヘッダー
+*********************************/
+
+#navi{
+    background: #223c62;
+}
+
+.nav-menu{
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav-nenu2{
+    display: none;
+}
+
+
+    /* ハンバーガーメニュー */
+.hamburger {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+    z-index: 20;
+    background: #223c62;
+    border-radius:15%;
+}
+.hamburger span {
+    width: 50%;
+    height: 2px;
+    background-color: #f2f0e4;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    left: 25%;
+    transition: 0.5s;
+}
+.hamburger span:nth-child(1) {
+    top: 36%;
+}
+.hamburger span:nth-child(2) {
+    top: 50%;
+}
+.hamburger span:nth-child(3) {
+    top: 64%;
+}
+.open .hamburger span {
+    background-color: #f2f0e4;
+}
+.open .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+.open .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(45deg);
+}
+#mask {
+    display: none;
+    transition: 0.5s;
+}
+.open #mask {
+    width: 100%;
+    height: 100vh;
+    background-color: #223c62;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+
+}
+
+/* header{
+    text-align: center;
+    margin:0 auto;
+} */
+
+.open .nav-menu2{
+    display: block;
+    display:flex;
+    flex-direction: column; 
+    text-align: center;
+    z-index: 15;
+    /* 追加 */
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    /* border: solid pink; */
+
+}
+
+.open .nav-menu2 a{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #f2f0e4;
+    z-index: 15;
+    /* border: solid red; */
+
+    /* widthを子要素に合わせる */
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+}
+
+.open .nav-menu2 .logo{
+    position: absolute;
+    top:0;
+    width: 185px;
+    margin: 0 auto;
+    z-index: 15;
+}
+
+/*********************************
+	SNS
+*********************************/
+.twitter-timeline{
+    display: none !important;
+        /* display:noneが効かないとき
+        https://csshtml.work/displaynone-bad/ */
+}
+
+.sns{
+    margin: 0 auto;
+}
+
+.sns-link{
+    display:none;
+}
+
+/* 動画 */
+.video-box{
+    width: 100%;
+}
+
+#video{
+    left:50%;
+    transform: translateX(-50%);
+}
+
+
+/*********************************
+	トピックス
+*********************************/
+.topics-wrapper{
+    flex-direction: column;
+}
+
+.ranking{
+    width: 100%;
+}
+.ranking a{
+font-size: 1rem;
+}
+
+.news{
+    width: 100%;
+}
+
+.news dl {
+    padding: 0px 0px 1rem 30px;
+    font-size: 1rem;
+    border-left: none;
+    border-top: 2px solid #223c62;
+}
+
+.news dt {
+    padding-right:10px;
+
+}
+
+
+
+}
+
+
+/*********************************
+	company.html 会社概要
+*********************************/
+
+table{
+    border-collapse:collapse;
+
+    margin:30px auto;
+}
+
+
+th,td{
+    border: 1px solid #223c62;
+    padding: 10px 20px;
+}
+
+th{
+    background:#223c62;
+    color:#f2f0e4;
+    font-weight:normal;
+    border-bottom: 1px solid #f2f0e4;
+}
+
+@media(max-width:900px){
+th,td {
+    width: 100%;
+    display: block;
+    }
+
+th {
+    text-align:left;
+    width: 100%;
+    }
+
+td {
+    border-top:none;
+    }
+}
+
+/*********************************
+	recruit.html 採用情報
+*********************************/
+/* お知らせ */
+.recruit dl {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    width:500px;
+    border-top: 1px solid #ccc;
+}
+
+.recruit dt {
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.recruit dd {
+    width: 300px;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+
+@media(max-width:600px){
+.rectuit dl{
+    flex-direction: column;
+}
+
+.recruit dt {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.recruit dd{
+    width: 100%;
+    padding-top: 0;
+}
+        
+    }
+
+
+/*********************************
+	imte.html 商品情報
+*********************************/
+.item-info{
+    display: flex;
+    margin: 50px auto;
+}
+
+.item-image{
+    width: 50%;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.item-image img{
+    max-width:300px;
+    background:#fff;
+    border:1px solid;
+}
+
+.item-text{
+    width: 50%;
+}
+
+.detail .title{
+    font-size: 1.4rem;
+    padding-bottom: 25px;
+}
+
+
+.detail dl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.detail dt{
+    width: 100px;
+    padding: 10px 0;
+}
+
+.detail dd{
+    width: 200px;
+    padding: 10px 0;
+}
+
+.shop{
+    display: flex;
+    margin-top: 30px;
+}
+
+.btn{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    background:#fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    margin-right:20px;
+}
+
+@media(max-width:600px){
+
+    .item-info{
+        flex-direction: column;
+    }
+
+    .item-image{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .item-image img{
+        max-width:300px;
+        background:#fff;
+        border:1px solid;
+    }
+    
+    .item-text{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .detail dl{
+        margin: 0 auto;
+    }
+
+    .shop{
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .btn{
+        margin-right: 0;
+    }
+
+
+        }
